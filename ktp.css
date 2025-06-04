@@ -30,14 +30,15 @@ body {
 }
 
 .ktp-card {
-  width: 100%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 500px;
   background: linear-gradient(to bottom, #dff1ff, #bcdff6);
   border: 2px solid #333;
   border-radius: 12px;
-  padding: 20px 30px;
+  padding: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
+  box-sizing: border-box;
 }
 
 .ktp-header {
@@ -62,23 +63,22 @@ body {
 
 .ktp-content span {
   display: inline-block;
-  width: 45%;
-  max-width: 160px;
+  width: 100%;
   font-weight: bold;
 }
 
 .ktp-photo {
   position: absolute;
   top: 100px;
-  right: 30px;
-  width: 90px;
-  height: 120px;
+  right: 20px;
+  width: clamp(60px, 20vw, 90px);
+  height: clamp(80px, 25vw, 120px);
   background: #fff;
   border: 1px solid #999;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+overflow: hidden;
 }
 
 .ktp-photo img {
@@ -121,10 +121,12 @@ body {
 }
 
 /* Media Query untuk HP */
-@media (max-width: 500px) {
-  .ktp-card {
-    padding: 15px 20px;
+@media (min-width: 600px) {
+    .ktp-content span {
+    width: 45%;
+    display: inline-block;
   }
+}
 
   .ktp-photo {
     top: 100px;
@@ -147,4 +149,3 @@ body {
   .text {
     font-size: 1.2rem;
   }
-}
