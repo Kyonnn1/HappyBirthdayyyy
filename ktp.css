@@ -50,14 +50,14 @@ body {
 
 .ktp-title {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .ktp-content {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 .ktp-content span {
@@ -91,7 +91,7 @@ body {
   position: absolute;
   bottom: 20px;
   right: 30px;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   text-align: center;
 }
 
