@@ -1,6 +1,7 @@
 body {
   background: #f0f0f0;
   display: flex;
+  flex-direction: column; /* agar teks dan KTP tampil berurutan */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -8,6 +9,24 @@ body {
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.text {
+  font-size: 1.6rem;
+  color: #333;
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: textFadeIn 2s ease 0.3s forwards;
+}
+
+@keyframes textFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ktp-card {
@@ -76,24 +95,29 @@ body {
   text-align: center;
 }
 
-.text {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  text-align: center;
-  font-size: 1.6rem;
-  color: #333;
-  font-family: sans-serif;
+.ktp-line {
   opacity: 0;
-  transform: translateY(-40px);
-  animation: textFadeIn 1s ease 0.3s 1 forwards;
+  transform: translateY(10px);
+  transition: all 10s ease;
 }
 
-@keyframes textFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.ktp-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.click-text {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555;
+  animation: blink 1s infinite;
+  cursor: pointer;
+  text-align: center;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* Media Query untuk HP */
@@ -107,7 +131,6 @@ body {
     right: 20px;
     width: 70px;
     height: 90px;
-    padding-top: 30px;
   }
 
   .ktp-content span {
@@ -124,30 +147,4 @@ body {
   .text {
     font-size: 1.2rem;
   }
-}
-
-.ktp-line {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-}
-.ktp-line.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.click-text {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
-  font-size: 1rem;
-  color: #555;
-  animation: blink 1s infinite;
-  cursor: pointer;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
 }

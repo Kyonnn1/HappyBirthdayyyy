@@ -1,12 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fef3e2;
+  background: radial-gradient(circle at center, #1c1208 0%, #0d0804 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-family: 'Georgia', serif;
+  overflow: hidden;
 }
 
 .bible-container {
@@ -16,6 +17,7 @@ body {
   perspective: 1500px;
   cursor: pointer;
   position: relative;
+  z-index: 1;
 }
 
 .cover, .page {
@@ -118,4 +120,58 @@ body {
 @keyframes blink {
   0%, 70% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+.bible-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 160%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 230, 100, 0.5) 0%,
+    rgba(255, 180, 0, 0.2) 50%,
+    transparent 100%
+  );
+  filter: blur(100px);
+  animation: glowMove 6s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1) rotate(15deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+}
+
+.text {
+  position: absolute;
+  top: 4vw;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1rem, 4vw, 28px);
+  color: goldenrod;
+  font-family: sans-serif;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: textFadeIn 1s ease-out 0.3s forwards;
+}
+
+@keyframes textFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

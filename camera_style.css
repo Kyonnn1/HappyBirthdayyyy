@@ -9,11 +9,12 @@ body {
 
 .camera {
   position: relative;
-  width: 400px;
-  height: 240px;
+  width: 80vw;
+  max-width: 400px;
+  aspect-ratio: 5 / 3;
   background: #3a3a3a;
-  border-top: 20px solid #cde0f5;
-  border-bottom: 10px solid #cde0f5;
+  border-top: 5vw solid #cde0f5;
+  border-bottom: 2vw solid #cde0f5;
   animation: slideInLeft 1s ease-out forwards;
   transform: translateX(-100vw);
 }
@@ -27,22 +28,22 @@ body {
 .camera::before {
   content: '';
   position: absolute;
-  width: 120px;
-  height: 120px;
-  border: 16px solid #cde0f5;
+  width: 30%;
+  aspect-ratio: 1 / 1;
+  border: 4vw solid #cde0f5;
   background: #1e1e1e;
   border-radius: 50%;
-  top: 60px;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .lens-center {
   position: absolute;
-  top: 104px;
+  top: 47%;
   left: 50%;
-  width: 40px;
-  height: 40px;
+  width: 10%;
+  aspect-ratio: 1 / 1;
   background: #000;
   border-radius: 50%;
   transform: translateX(-50%);
@@ -51,10 +52,10 @@ body {
 
 .top-left {
   position: absolute;
-  top: -40px;
-  left: 20px;
-  width: 40px;
-  height: 20px;
+  top: -7vw;
+  left: 5%;
+  width: 10%;
+  height: 5%;
   background: #000;
   transform: translateX(100vw);
   animation:
@@ -64,10 +65,10 @@ body {
 
 .top-right {
   position: absolute;
-  top: -40px;
-  right: 20px;
-  width: 50px;
-  height: 30px;
+  top: -7vw;
+  right: 5%;
+  width: 12%;
+  height: 7%;
   background: #cde0f5;
   transform: translateX(100vw);
   animation: slideInRight 1s ease-out 0.6s forwards;
@@ -75,10 +76,10 @@ body {
 
 .flash {
   position: absolute;
-  top: 10px;
+  top: 5%;
   left: 60%;
-  width: 20px;
-  height: 20px;
+  width: 5%;
+  aspect-ratio: 1 / 1;
   background: #eee;
   box-shadow: 0 0 6px #fff;
   transform: translateX(100vw);
@@ -89,10 +90,10 @@ body {
 
 .viewfinder {
   position: absolute;
-  top: 10px;
-  right: 40px;
-  width: 50px;
-  height: 30px;
+  top: 5%;
+  right: 10%;
+  width: 12%;
+  height: 7%;
   background: #1e1e1e;
   transform: translateX(100vw);
   animation: slideInRight 1s ease-out 0.8s forwards;
@@ -121,22 +122,22 @@ body {
 
 @keyframes press {
   0% {
-    top: -40px;
+    top: -7vw;
   }
   50% {
-    top: -35px;
+    top: -6vw;
   }
   100% {
-    top: -40px;
+    top: -7vw;
   }
 }
 
 .text {
   position: absolute;
-  top: 20px;
+  top: 4vw;
   width: 100%;
   text-align: center;
-  font-size: 28px;
+  font-size: clamp(1rem, 4vw, 28px);
   color: #333;
   font-family: sans-serif;
   opacity: 0;

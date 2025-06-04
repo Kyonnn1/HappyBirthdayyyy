@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #fdfaf6, #ece5dc);
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.final-container {
+  max-width: 800px;
+  width: 90%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.final-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+.final-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #7a5c40;
+}
+
+.final-content {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.custom-message {
+  white-space: pre-wrap;
+}
+
+/* Animasi fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .final-card {
+    padding: 30px 20px;
+  }
+
+  .final-title {
+    font-size: 2rem;
+  }
+
+  .final-content {
+    font-size: 1rem;
+  }
+}
