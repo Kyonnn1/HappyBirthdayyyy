@@ -1,151 +1,132 @@
+/* Reset & Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+  background: #e0f7fa;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 16px;
+  min-height: 100vh;
 }
 
+/* Judul Atas */
 .text {
-  font-size: 1.6rem;
-  color: #333;
-  font-family: sans-serif;
+  font-size: 1.8rem;
+  color: #004d40;
+  margin-bottom: 24px;
   text-align: center;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(-40px);
-  animation: textFadeIn 2s ease 0.3s forwards;
+  animation: fadeInDown 1s ease;
 }
 
-@keyframes textFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* KTP Card */
 .ktp-card {
-  width: 90vw; /* 90% dari lebar layar */
-  aspect-ratio: 86 / 54; /* Rasio proporsional kartu */
-  max-width: 320px; /* batas maksimum agar tidak terlalu besar di tablet/laptop */
-  background: linear-gradient(to bottom, #dff1ff, #bcdff6);
-  border: 2px solid #333;
+  width: 90vw;
+  max-width: 420px;
+  height: 250px;
+  background: linear-gradient(to right, #e0ecf8, #cfdce5);
   border-radius: 12px;
-  padding: 12px 16px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  animation: zoomIn 1s ease;
 }
 
+/* KTP Header */
 .ktp-header {
   text-align: center;
-  font-weight: bold;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.ktp-title {
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: bold;
+  line-height: 1.2;
   margin-bottom: 10px;
 }
 
-.ktp-content {
-  font-size: 0.55rem;
-  line-height: 1.4;
-  flex: 1;
-}
-
-.ktp-content span {
-    display: inline-block;
-  width: 40%;
+.ktp-header h1 {
+  font-size: 0.9rem;
   font-weight: bold;
-  font-size: 0.55rem;
+  color: #003366;
+  margin: 0;
+  text-transform: uppercase;
 }
 
-.ktp-photo {
-  position: absolute;
-  top: 40%;
-  right: 8px;
-  width: 50px;
-  height: 65px;
-  background: #fff;
-  border: 1px solid #999;
-  overflow: hidden;
+.ktp-header h2 {
+  font-size: 0.8rem;
+  color: #003366;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* KTP Body */
+.ktp-body {
   display: flex;
-  justify-content: center;
+  gap: 16px;
   align-items: center;
 }
 
 .ktp-photo img {
-  width: 100%;
-  height: 100%;
+  width: 60px;
+  height: 90px;
   object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #999;
 }
 
-.ktp-footer {
-  font-size: 0.5rem;
-  text-align: right;
+.ktp-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.ktp-line {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 10s ease;
+.ktp-info p {
+  margin: 6px 0;
+  font-size: 0.7rem;
+  color: #333;
 }
 
-.ktp-line.show {
-  opacity: 1;
-  transform: translateY(0);
+.ktp-info strong {
+  color: #00557f;
 }
 
+/* Click Text */
 .click-text {
-  margin-top: 20px;
+  margin-top: 24px;
   font-size: 1rem;
   color: #555;
-  animation: blink 1s infinite;
-  cursor: pointer;
   text-align: center;
+  animation: blink 2s infinite;
+  cursor: pointer;
 }
 
+/* Animations */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-/* Media Query untuk HP */
-@media (max-width: 500px) {
-  .ktp-card {
-    padding: 15px 20px;
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
   }
-
-  .ktp-photo {
-    top: 100px;
-    right: 20px;
-    width: 70px;
-    height: 90px;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .ktp-content span {
-    width: 100%;
-    display: block;
-    margin-bottom: 5px;
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
   }
-
-  .ktp-footer {
-    font-size: 0.75rem;
-    right: 20px;
-  }
-
-  .text {
-    font-size: 1.2rem;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
