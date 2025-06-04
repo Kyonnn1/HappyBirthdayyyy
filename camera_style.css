@@ -9,14 +9,14 @@ body {
 
 .camera {
   position: relative;
-  width: clamp(280px, 80vw, 400px);
+  width: 80vw;
+  max-width: 400px;
   aspect-ratio: 5 / 3;
   background: #3a3a3a;
   border-top: 5vw solid #cde0f5;
   border-bottom: 2vw solid #cde0f5;
   animation: slideInLeft 1s ease-out forwards;
   transform: translateX(-100vw);
-  border-radius: 12px;
 }
 
 @keyframes slideInLeft {
@@ -149,13 +149,5 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (min-width: 800px) {
-  .camera {
-    width: 400px;
-    border-top: 20px solid #cde0f5;
-    border-bottom: 10px solid #cde0f5;
   }
 }
