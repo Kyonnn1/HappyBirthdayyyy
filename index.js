@@ -6,7 +6,7 @@ click.addEventListener('click',()=>{
         
         setTimeout(() => {
             window.location.href = "camera.html";
-        }, 1000);
+        }, 500);
     }
     else{
         click.classList.remove('active')

@@ -41,7 +41,7 @@ body {
   justify-content: center;
   z-index: 3;
   transform-origin: left;
-  transition: transform 1s ease;
+  transition: transform 4s ease;
 }
 
 .cover.back {
@@ -59,7 +59,7 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 1s ease 1s;
+  transition: opacity 2s ease 1s;
 }
 
 .verse {
@@ -158,10 +158,10 @@ body {
 
 .text {
   position: absolute;
-  top: 4vw;
+  top: 7vw;
   width: 100%;
   text-align: center;
-  font-size: clamp(1rem, 4vw, 28px);
+  font-size: clamp(2rem, 4vw, 28px);
   color: goldenrod;
   font-family: sans-serif;
   opacity: 0;
